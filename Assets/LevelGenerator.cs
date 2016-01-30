@@ -5,6 +5,7 @@ public class LevelGenerator : MonoBehaviour {
     public Vector2 Size;
 
     public GameObject Ground;
+    public GameObject ShrineGround;
     public GameObject Shrine;
     public GameObject[] Objects;
     
@@ -28,7 +29,14 @@ public class LevelGenerator : MonoBehaviour {
         {
             for (var h = Size.y / 2 * -1; h < Size.y / 2; ++h)
             {
-                var floor = (GameObject)Instantiate(Ground, new Vector3(center.x + w + 0.5f, center.y + h + 0.5f, 1), new Quaternion());
+                var toInstantiate = Ground;
+
+                if(w < 4 && w > -5 && h < 4 && h > -4)
+                {
+                    toInstantiate = ShrineGround;
+                }
+
+                var floor = (GameObject)Instantiate(toInstantiate, new Vector3(center.x + w + 0.5f, center.y + h + 0.5f, 1), new Quaternion());
 
                 floor.transform.SetParent(transform, true);
             }
@@ -37,6 +45,15 @@ public class LevelGenerator : MonoBehaviour {
         //Place Shrine
         var shrine = (GameObject)Instantiate(Shrine, center, new Quaternion());
         shrine.transform.SetParent(transform, true);
+
+        //Place BoundingBox for shrine
+        var shrineBox = new GameObject();
+
+        var collider = shrineBox.AddComponent<BoxCollider2D>();
+        collider.size = new Vector2(8, 7);
+
+        shrineBox.transform.position = new Vector3(0f, 0.5f, 0);
+        shrineBox.transform.SetParent(transform);
 
         //Place objects
 
@@ -60,6 +77,11 @@ public class LevelGenerator : MonoBehaviour {
                 ++failure;
                 var posX = Random.Range(0 + baseSize.x / 2, Size.x - baseSize.x / 2);
                 var posY = Random.Range(0 + baseSize.y / 2, Size.y - baseSize.y / 2);
+
+                if (posX < 4 && posX > -5 && posY < 5 && posY > -4)
+                {
+                    continue;
+                }
 
                 position = new Vector3(posX - Size.x / 2, posY - Size.y / 2, 1);
             } while (Physics2D.BoxCast(position, new Vector2(baseSize.x + 2, baseSize.y + 2), 0, Vector2.zero));
@@ -104,6 +126,7 @@ public class LevelGenerator : MonoBehaviour {
             obj.transform.SetParent(transform, true);
         }
 
+        Destroy(shrineBox);
     }
 
     void OnDrawGizmos()

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b210a13c98aa11846afa1bfe448a2c60
-timeCreated: 1454175618
+timeCreated: 1454182595
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,9 +8,13 @@ TextureImporter:
     21300002: Shrine_Top
     21300004: Home_Base
     21300006: Home_Top
-    21300008: Props_0
+    21300008: Floor_2
     21300010: HolyTree_Base
     21300012: HolyTree_Top
+    21300014: Floor_1
+    21300016: Floor_3
+    21300018: Floor_4
+    21300020: Props_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -396,7 +400,7 @@ TextureImporter:
         - {x: -265.35468, y: 304.30133}
         - {x: -265.35468, y: 325.30133}
         - {x: -266.35468, y: 329.30133}
-    - name: Props_0
+    - name: Floor_2
       rect:
         serializedVersion: 2
         x: 264
@@ -516,6 +520,66 @@ TextureImporter:
         - {x: -98.053345, y: -187.01599}
         - {x: -98.053345, y: -183.01599}
         - {x: -99.053345, y: -181.01599}
+    - name: Floor_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 2867
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.388, y: 45.705322}
+        - {x: -45.388, y: -45.294678}
+        - {x: 45.612, y: -45.294678}
+        - {x: 45.612, y: 45.705322}
+    - name: Floor_3
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 2866
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.164, y: 46.022705}
+        - {x: -45.164, y: -44.977295}
+        - {x: 45.836, y: -44.977295}
+        - {x: 45.836, y: 46.022705}
+    - name: Floor_4
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 2866
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -45.052002, y: 46.022705}
+        - {x: -45.052002, y: -44.977295}
+        - {x: 45.947998, y: -44.977295}
+        - {x: 45.947998, y: 46.022705}
+    - name: Props_0
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 2867
+        width: 132
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44.940002, y: 45.705322}
+        - {x: -44.940002, y: -45.294678}
+        - {x: 46.059998, y: -45.294678}
+        - {x: 46.059998, y: 45.705322}
     outline: []
   spritePackingTag: 
   userData: 
