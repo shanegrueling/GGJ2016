@@ -24,17 +24,26 @@ public class npcBehaviour : MonoBehaviour {
 	 */
 	void OnMouseUp() {
 
-//		Irgendwas funktioniert hier noch nicht. prüfen, wenn Internet wieder da ist!!!!!
-//		if(!_playerObj.GetComponent<player>().currentNpcClient) {
-//
-//			Debug.Log("Seems like you already got something to do");
-//			return;
-//		}
+		// is the NPC within reach of the player?
+		float distance = Vector3.Distance (_playerObj.transform.position, transform.position);
+		if(distance > 1.1) {
 
+			return;
+		}
+
+		// does the player already has a quest?
+		if(_playerObj.GetComponent<player>().currentNpcClient != null) {
+
+			uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("Seems like you already got something to do", gameObject);
+			return;
+		}
+
+		// is the current quest of the player (if given) from the same NPC?
 		if(_playerObj.GetComponent<player>().currentNpcClient == gameObject) {
 
 			Hashtable playerInventory = _playerObj.GetComponent<player> ().inventory.GetComponent<inventoryManager>().slots;
 
+			// test if all required items are in the players inventory
 			foreach(string needed in neededItems) {
 
 				if(!playerInventory.Contains(needed) || (int)playerInventory[needed] <= 0) {
@@ -62,16 +71,10 @@ public class npcBehaviour : MonoBehaviour {
 		// Is the quest already done?
 		if (!questSolved) {
 
-			float distance = Vector3.Distance (_playerObj.transform.position, transform.position);
-
-			// Is the NPC right beneath the player?
-			if (distance <= 1.1f) {
-
-				// does the NPC has anything to say?
-				if (conversationLines.Length > 0) {
-			
-					uimanager.GetComponent<uiManager> ().startConversation (conversationLines, gameObject);
-				}
+			// does the NPC has anything to say?
+			if (conversationLines.Length > 0) {
+		
+				uimanager.GetComponent<uiManager> ().startConversation (conversationLines, gameObject);
 			}
 
 			return;

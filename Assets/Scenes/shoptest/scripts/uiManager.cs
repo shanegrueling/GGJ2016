@@ -84,6 +84,32 @@ public class uiManager : MonoBehaviour {
 
 
 	/**
+	 * open speech bubble to show a given message
+	 */
+	public void showSpeechBubbleWithText(string text, GameObject convPartner) {
+
+		if (inventoryUiAnimator.GetBool ("isHidden") && shopUiAnimator.GetBool ("isHidden") && !_inConversation) {
+
+			player.GetComponent<MoveToClick> ().inConversationOrMenu = true;
+
+			_inConversation = true;
+			_currentConversationPartner = convPartner;
+			_currentConversation = null;
+
+			GameObject speechBubble = Instantiate (speechBubblePrefab);
+			speechBubble.transform.SetParent (conversationUi.transform, false);
+			speechBubble.transform.position = convPartner.transform.position;
+			speechBubble.transform.Find ("text").GetComponent<Text> ().text = text;
+
+			Button button = speechBubble.GetComponent<Button> ();
+			button.onClick.AddListener (continueConversation);
+		}
+	}
+
+
+
+
+	/**
 	 * jump to the next line of the conversation
 	 */
 	public void continueConversation() {
@@ -91,7 +117,7 @@ public class uiManager : MonoBehaviour {
 		_currentConversationLine++;
 
 		// is the current conversation continuable?
-		if(_currentConversationLine >= _currentConversation.Length) {
+		if(_currentConversation == null || _currentConversationLine >= _currentConversation.Length) {
 
 			player.GetComponent<MoveToClick> ().inConversationOrMenu = false;
 
