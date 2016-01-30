@@ -26,7 +26,7 @@ public class npcBehaviour : MonoBehaviour {
 
 		// is the NPC within reach of the player?
 		float distance = Vector3.Distance (_playerObj.transform.position, transform.position);
-		if(distance > 1.1) {
+		if(distance > 1.2) {
 
 			return;
 		}
