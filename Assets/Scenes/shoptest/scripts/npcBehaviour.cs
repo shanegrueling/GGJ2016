@@ -42,13 +42,19 @@ public class npcBehaviour : MonoBehaviour {
 					Debug.Log ("Something is missing in your inventory");
 					return;
 				}
-
-				questSolved = true;
-				_playerObj.GetComponent<player>().currentTask = null;
-				_playerObj.GetComponent<player>().currentNpcClient = null;
-
-				Debug.Log ("Yes! You have got everything you need to finish this quest.");
 			}
+
+			// delete items from player inventory
+			foreach (string needed in neededItems) {
+
+				_playerObj.GetComponent<player> ().inventory.GetComponent<inventoryManager> ().removeItem (needed);
+			}
+
+			questSolved = true;
+			_playerObj.GetComponent<player>().currentTask = null;
+			_playerObj.GetComponent<player>().currentNpcClient = null;
+
+			Debug.Log ("Yes! You have got everything you need to finish this quest.");
 
 			return;
 		}

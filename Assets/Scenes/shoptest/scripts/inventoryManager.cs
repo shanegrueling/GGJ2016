@@ -110,6 +110,37 @@ public class inventoryManager : MonoBehaviour {
 
 
 	/**
+	 * just remove an item from the inventory
+	 * 
+	 * @param string item is a string of the item to sell (e.g. water, bambus, etc...)
+	 */
+	public void removeItem(string item) {
+
+		// does the player has at least one of the given items
+		if((int)slots[item] <= 0) {
+
+			return;
+		}
+
+		int price = (int)Mathf.Floor((int)shopitems[item].price * sellMultiplier);
+
+		// substract item
+		slots[item] = (int)slots[item] - 1;
+
+		// sold the last one (hide it in the inventory)
+		if((int)slots[item] == 0) {
+
+			inventoryScreen.transform.Find ("slot_" + item).Find ("icon").gameObject.SetActive (false);
+		}
+
+		// display new number
+		inventoryScreen.transform.Find ("slot_" + item).Find ("icon").Find("textwrapper").Find ("num").gameObject.GetComponent<Text>().text = slots [item].ToString();
+	}
+	// END removeItem()
+
+
+
+	/**
 	 * return the description of an item
 	 */
 	public string getDescriptionof(string itemtype) {
