@@ -115,9 +115,6 @@ public class MoveToClick : MonoBehaviour {
         };
         Node targetNode = grid.NodeFromWorldPoint(targetPos);
 
-        if (!targetNode.Walkable) return;
-
-
         List<Waypoint> openSet = new List<Waypoint>();
         HashSet<Waypoint> closedSet = new HashSet<Waypoint>();
         openSet.Add(startNode);
@@ -145,6 +142,13 @@ public class MoveToClick : MonoBehaviour {
             foreach (Node neighbour in grid.GetNeighbours(currentNode.Node)) {
 
                 var wayPoint = new Waypoint() { Node = neighbour };
+
+                if(neighbour == targetNode && !neighbour.Walkable)
+                {
+                    RetracePath(startNode.Node, targetNode, currentNode);
+                    return;
+                }
+
                 if (!neighbour.Walkable || closedSet.Contains(wayPoint)) {
 
 					continue;
