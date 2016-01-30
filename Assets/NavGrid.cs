@@ -23,20 +23,21 @@ public class NavGrid : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         grid = new Node[Width, Height];
+        var center = transform.position;
 
-        for (int x = 0; x < Width; x++)
+        for (int x = Width/2*-1; x < Width/2; x++)
         {
-            for (int y = 0; y < Height; y++)
+            for (int y = Height/2*-1; y < Height/2; y++)
             {
-                Vector3 worldPoint = BottomLeft + Vector3.right * (x) + Vector3.up * (y);
+                Vector3 worldPoint = new Vector3(center.x + x + 0.5f, center.y + y + 0.5f, 1);
                 bool walkable = !(Physics2D.CircleCast(worldPoint, 0.1f, Vector3.zero));
-                
-                grid[x, y] = new Node
+
+                grid[x + Width / 2, y + Height / 2] = new Node
                 {
                     Walkable = walkable,
                     WorldPosition = worldPoint,
-                    X = x,
-                    Y = y,
+                    X = x + Width / 2,
+                    Y = y + Height / 2,
                 };
             }
         }
@@ -81,10 +82,8 @@ public class NavGrid : MonoBehaviour {
     public List<Node> path;
     void OnDrawGizmos()
     {
-        var center = BottomLeft;
+        var center = transform.position;
 
-        center.x = (center.x - 0.5f ) + Width / 2;
-        center.y = (center.y -0.5f) + Height / 2;
         Gizmos.DrawWireCube(center, new Vector3(Width, Height, 1));
 
         if (grid != null)
