@@ -36,7 +36,11 @@ public class MoveToClick : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (_path.Count == 0) return;
+        if (_path.Count == 0)
+        {
+            GetComponent<Animator>().SetInteger("Direction", 0);
+            return;
+        }
 
         var target = _path.Peek();
 
@@ -61,14 +65,10 @@ public class MoveToClick : MonoBehaviour {
             GetComponent<Animator>().SetInteger("Direction", 3);
 		}
 
-
 		transform.position = Vector3.MoveTowards(transform.position, target.WorldPosition, 2f * Time.fixedDeltaTime);
-
-        
 
         if (transform.position == target.WorldPosition)
         {
-			GetComponent<Animator>().SetInteger("Direction", 0);
             _path.Dequeue();
         }
     }
