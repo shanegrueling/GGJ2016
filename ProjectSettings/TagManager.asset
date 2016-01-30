@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - speechbubble
+  - npc
+  - shrine
   layers:
   - Default
   - TransparentFX
@@ -47,6 +49,9 @@ TagManager:
     locked: 0
   - name: NPC
     uniqueID: 110683475
+    locked: 0
+  - name: AboveNPC
+    uniqueID: 2915866525
     locked: 0
   - name: UI
     uniqueID: 1352178711

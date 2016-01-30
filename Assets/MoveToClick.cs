@@ -69,7 +69,8 @@ public class MoveToClick : MonoBehaviour {
 
         if (transform.position == target.WorldPosition)
         {
-            _path.Dequeue();
+            var n = _path.Dequeue();
+            Debug.Log("Reached " + n.X + "/" + n.Y);
         }
     }
 
@@ -89,7 +90,7 @@ public class MoveToClick : MonoBehaviour {
 
 
 
-    private class Waypoint
+    private class Waypoint : IEquatable<Waypoint>
     {
         public Node Node;
         public int GCost;
@@ -102,18 +103,29 @@ public class MoveToClick : MonoBehaviour {
         {
             return Node.GetHashCode();
         }
+
+        public bool Equals(Waypoint other)
+        {
+            return other.Node == Node;
+        }
     }
 
 
 
     void FindPath(Vector3 startPos, Vector3 targetPos)
     {
+
+        var start = Time.realtimeSinceStartup;
+
         Waypoint startNode = new Waypoint
         {
             Node = grid.NodeFromWorldPoint(startPos),
             GCost = 0,
         };
         Node targetNode = grid.NodeFromWorldPoint(targetPos);
+
+        Debug.Log("From " + startNode.Node.X + "/" + startNode.Node.Y);
+        Debug.Log("To " + targetNode.X + "/" + targetNode.Y);
 
         List<Waypoint> openSet = new List<Waypoint>();
         HashSet<Waypoint> closedSet = new HashSet<Waypoint>();
@@ -167,6 +179,13 @@ public class MoveToClick : MonoBehaviour {
 						openSet.Add (wayPoint);
 					}
                 }
+            }
+
+            if(Time.realtimeSinceStartup - start > 10)
+            {
+                Debug.Log("ERROR!!!!");
+                RetracePath(startNode.Node, targetNode, currentNode);
+                return;
             }
         }
     }
