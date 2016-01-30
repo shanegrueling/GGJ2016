@@ -13,7 +13,6 @@ public class NavGrid : MonoBehaviour {
 		public string Tag;
     }
 
-    public Vector3 BottomLeft;
 
     public int Width;
     public int Height;
@@ -22,6 +21,7 @@ public class NavGrid : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
         grid = new Node[Width, Height];
         var center = transform.position;
 
@@ -73,8 +73,8 @@ public class NavGrid : MonoBehaviour {
 
     public Node NodeFromWorldPoint(Vector3 worldPosition)
     {
-        int x = (int)Math.Round(worldPosition.x - BottomLeft.x);
-        int y = (int)Math.Round(worldPosition.y - BottomLeft.y);
+		int x = (int)Math.Round(worldPosition.x -  Width/2*-1 - 0.5f);
+		int y = (int)Math.Round(worldPosition.y -  Height/2*-1 - 0.5f);
 
 		return grid [x, y];
     }
