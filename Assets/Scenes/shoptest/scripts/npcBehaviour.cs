@@ -8,8 +8,9 @@ public class npcBehaviour : MonoBehaviour {
 
 	public string[] conversationLines;	// holds all the "before quest" lines of conversation
 	public string[] neededItems; 		// which items are needed in order to solve the quest
-	private bool questSolved = false; 	// is the quest aready done?
+	public int karmaAward; 				// award for finishing the quest
 
+	private bool _questSolved = false; 	// is the quest aready done?
 	private GameObject _playerObj;
 
 
@@ -59,7 +60,8 @@ public class npcBehaviour : MonoBehaviour {
 				_playerObj.GetComponent<player> ().inventory.GetComponent<inventoryManager> ().removeItem (needed);
 			}
 
-			questSolved = true;
+			_questSolved = true;
+			_playerObj.GetComponent<player> ().inventory.GetComponent<inventoryManager> ().karma += karmaAward;
 			_playerObj.GetComponent<player>().currentTask = null;
 			_playerObj.GetComponent<player>().currentNpcClient = null;
 
@@ -69,7 +71,7 @@ public class npcBehaviour : MonoBehaviour {
 		}
 
 		// Is the quest already done?
-		if (!questSolved) {
+		if (!_questSolved) {
 
 			// does the NPC has anything to say?
 			if (conversationLines.Length > 0) {
@@ -94,7 +96,7 @@ public class npcBehaviour : MonoBehaviour {
 	public void conversationEnded() {
 
 		// Is the quest already done?
-		if (!questSolved) {
+		if (!_questSolved) {
 
 			_playerObj.GetComponent<player> ().currentNpcClient = gameObject;
 			_playerObj.GetComponent<player> ().currentTask = neededItems;

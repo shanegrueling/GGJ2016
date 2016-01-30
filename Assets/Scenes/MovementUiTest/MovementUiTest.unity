@@ -2379,6 +2379,7 @@ MonoBehaviour:
   - I would pay in karma
   neededItems:
   - water
+  karmaAward: 30
 --- !u!1 &480131382
 GameObject:
   m_ObjectHideFlags: 0
@@ -5497,6 +5498,7 @@ MonoBehaviour:
   neededItems:
   - bamboosticks
   - water
+  karmaAward: 75
 --- !u!61 &1105695559
 BoxCollider2D:
   m_ObjectHideFlags: 0
