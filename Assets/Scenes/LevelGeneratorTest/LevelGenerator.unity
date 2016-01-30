@@ -85,6 +85,107 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &512626905
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 482794, guid: 14319dc2506d16d409f266bda70c1792, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482794, guid: 14319dc2506d16d409f266bda70c1792, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482794, guid: 14319dc2506d16d409f266bda70c1792, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482794, guid: 14319dc2506d16d409f266bda70c1792, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482794, guid: 14319dc2506d16d409f266bda70c1792, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482794, guid: 14319dc2506d16d409f266bda70c1792, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482794, guid: 14319dc2506d16d409f266bda70c1792, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 482794, guid: 14319dc2506d16d409f266bda70c1792, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 14319dc2506d16d409f266bda70c1792, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &573356003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 573356006}
+  - 114: {fileID: 573356005}
+  - 114: {fileID: 573356004}
+  m_Layer: 0
+  m_Name: Map
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &573356004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573356003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c10807cb029704c9e9e8b29348a2e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Width: 50
+  Height: 50
+--- !u!114 &573356005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573356003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074423fd709302b4a9d0ed284175bfa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Size: {x: 50, y: 50}
+  Ground: {fileID: 126910, guid: cbfc870f11b6c7e4b838b72256b93db8, type: 2}
+  Shrine: {fileID: 115818, guid: b2979af6c4442a045a20aea07f28ffe0, type: 2}
+  Objects:
+  - {fileID: 179016, guid: 5e9c1b49ee88aa74791a107d8b29cac5, type: 2}
+  - {fileID: 192920, guid: 22ee1a5e159c94b4e86951a4d312f740, type: 2}
+--- !u!4 &573356006
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 573356003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
 --- !u!1 &1802695466
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,8 +198,6 @@ GameObject:
   - 92: {fileID: 1802695470}
   - 124: {fileID: 1802695469}
   - 81: {fileID: 1802695468}
-  - 114: {fileID: 1802695467}
-  - 114: {fileID: 1802695473}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -106,21 +205,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1802695467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1802695466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074423fd709302b4a9d0ed284175bfa3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Size: {x: 50, y: 50}
-  Ground: {fileID: 126910, guid: cbfc870f11b6c7e4b838b72256b93db8, type: 2}
-  Shrine: {fileID: 0}
-  Objects: []
 --- !u!81 &1802695468
 AudioListener:
   m_ObjectHideFlags: 0
@@ -162,7 +246,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -188,17 +272,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &1802695473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1802695466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29c10807cb029704c9e9e8b29348a2e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BottomLeft: {x: 0, y: 0, z: 0}
-  Width: 50
-  Height: 50
