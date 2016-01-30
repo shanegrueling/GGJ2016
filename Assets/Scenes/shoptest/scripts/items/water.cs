@@ -9,7 +9,7 @@ namespace itemsystem
 
 			name = "Pure Water";
 			price = 20;
-			description = "Some really, really pure water to sprinkel on things.";
+			description = "Some really, really pure water to sprinkel on not so clean objects.";
 		}
 	}
 }

@@ -11,7 +11,7 @@ public class shopBehaviour : MonoBehaviour {
 		var playerObj = GameObject.FindGameObjectWithTag ("Player");
 		float distance = Vector3.Distance (playerObj.transform.position, transform.position);
 
-		if (distance <= 1.2f) {
+		if (distance <= 1.5f) {
 
 			if (uiManager.GetComponent<uiManager> ().GetComponent<uiManager> ().shopUiAnimator.GetBool ("isHidden") &&
 				!player.GetComponent<MoveToClick>().inConversationOrMenu) {

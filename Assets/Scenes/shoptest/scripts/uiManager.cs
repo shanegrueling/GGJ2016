@@ -10,6 +10,7 @@ public class uiManager : MonoBehaviour {
 	public GameObject conversationUi;
 	public GameObject speechBubblePrefab;
 	public GameObject player;
+	public GameObject closeShopBtn;
 
 	private string[] _currentConversation;
 	private int _currentConversationLine = 0;
@@ -46,11 +47,13 @@ public class uiManager : MonoBehaviour {
 			inventoryUiAnimator.SetBool ("isHidden", false);
 			shopUiAnimator.SetBool ("isHidden", false);
 			player.GetComponent<MoveToClick> ().inConversationOrMenu = true;
+			StartCoroutine (showShopClose ());
 		} else {
 
 			inventoryUiAnimator.SetBool ("isHidden", true);
 			shopUiAnimator.SetBool ("isHidden", true);
 			player.GetComponent<MoveToClick> ().inConversationOrMenu = false;
+			closeShopBtn.SetActive (false);
 		}
 	}
 	// END toggleShop()
@@ -134,4 +137,11 @@ public class uiManager : MonoBehaviour {
 		}
 	}
 	// END continueConversation()
+
+
+	private IEnumerator showShopClose()
+	{
+		yield return new WaitForSeconds (1.4f);
+		closeShopBtn.SetActive (true);
+	}
 }

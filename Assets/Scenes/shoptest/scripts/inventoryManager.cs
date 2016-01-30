@@ -23,11 +23,11 @@ public class inventoryManager : MonoBehaviour {
 	void Start() {
 
 		shopitems ["water"] 		= new water();
-		shopitems ["bamboosticks"] 	= new bambooSticks();
-		shopitems ["demonarrows"] 	= new demonArrows();
-		shopitems ["incensestick"] 	= new incenseSticks();
 		shopitems ["earth"] 		= new earth();
-		shopitems ["paperrunes"] 	= new paperRunes();
+		shopitems ["omamori"] 		= new omamori();
+		shopitems ["komainu"] 		= new komainu();
+		shopitems ["whitespell"] 	= new whitespell();
+		shopitems ["demonarrows"] 	= new demonArrows();
 	}
 	// END Start()
 
@@ -47,6 +47,8 @@ public class inventoryManager : MonoBehaviour {
 	 * @param string item is a string of the item to add (e.g. water, bambus, etc...)
 	 */
 	public void addToInventory(string item) {
+
+		Debug.Log (1);
 
 		// enough karma?
 		if (karma < (int)shopitems [item].price) {
@@ -155,7 +157,7 @@ public class inventoryManager : MonoBehaviour {
 	public void displayItemTooltipInShop(string itemtype) {
 
 		this.shopScreen.transform.Find("tooltip").Find("text").GetComponent<Text>().text = shopitems[itemtype].name + ": " + shopitems[itemtype].description;
-		this.shopScreen.transform.Find("price").Find("text").GetComponent<Text>().text = shopitems[itemtype].price.ToString();
+		this.shopScreen.transform.Find ("tooltip").Find("price").GetComponent<Text>().text = shopitems[itemtype].price.ToString();
 	}
 	// END displayItemTooltipInShop()
 
@@ -167,7 +169,7 @@ public class inventoryManager : MonoBehaviour {
 	public void hideTooltipInShop() {
 
 		this.shopScreen.transform.Find ("tooltip").Find ("text").GetComponent<Text> ().text = "";
-		this.shopScreen.transform.Find ("price").Find ("text").GetComponent<Text> ().text = "";
+		this.shopScreen.transform.Find ("tooltip").Find("price").GetComponent<Text>().text = "";
 	}
 	// END hideTooltipInShop()
 }
