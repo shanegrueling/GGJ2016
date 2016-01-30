@@ -31,8 +31,8 @@ public class npcBehaviour : MonoBehaviour {
 			return;
 		}
 
-		// does the player already has a quest?
-		if(_playerObj.GetComponent<player>().currentNpcClient != null) {
+		// does the player already has an other quest?
+		if(_playerObj.GetComponent<player>().currentNpcClient != gameObject && _playerObj.GetComponent<player>().currentNpcClient != null) {
 
 			uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("Seems like you already got something to do", gameObject);
 			return;
@@ -48,7 +48,7 @@ public class npcBehaviour : MonoBehaviour {
 
 				if(!playerInventory.Contains(needed) || (int)playerInventory[needed] <= 0) {
 
-					Debug.Log ("Something is missing in your inventory");
+					uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("I think you still need some more things for your ritual", gameObject);
 					return;
 				}
 			}
@@ -63,7 +63,7 @@ public class npcBehaviour : MonoBehaviour {
 			_playerObj.GetComponent<player>().currentTask = null;
 			_playerObj.GetComponent<player>().currentNpcClient = null;
 
-			Debug.Log ("Yes! You have got everything you need to finish this quest.");
+			uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("Yes you've got everything you need. Thanks pal!", gameObject);
 
 			return;
 		}
@@ -81,7 +81,7 @@ public class npcBehaviour : MonoBehaviour {
 		}
 
 	
-		Debug.Log ("The quest already has been solved");
+		uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("Mhh?", gameObject);
 		return;
 	}
 	// END OnMouseUp()
@@ -96,7 +96,6 @@ public class npcBehaviour : MonoBehaviour {
 		// Is the quest already done?
 		if (!questSolved) {
 
-			Debug.Log ("Okay, here is your quest...");
 			_playerObj.GetComponent<player> ().currentNpcClient = gameObject;
 			_playerObj.GetComponent<player> ().currentTask = neededItems;
 		}

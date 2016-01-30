@@ -1323,7 +1323,7 @@ GameObject:
   - 61: {fileID: 301891426}
   m_Layer: 5
   m_Name: ui
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2297,7 +2297,6 @@ GameObject:
   - 4: {fileID: 479129744}
   - 212: {fileID: 479129743}
   - 61: {fileID: 479129746}
-  - 114: {fileID: 479129745}
   - 114: {fileID: 479129747}
   m_Layer: 0
   m_Name: Floor (11)
@@ -2348,20 +2347,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 446404395}
   m_RootOrder: 11
---- !u!114 &479129745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 479129742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483518699dfd24d97bd12588628cd0ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uimanager: {fileID: 1456457237}
-  conversationLines: []
-  neededItems: []
 --- !u!61 &479129746
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2391,6 +2376,7 @@ MonoBehaviour:
   conversationLines:
   - Hello there!
   - I think my newborn is posessed. Would you help me?
+  - I would pay in karma
   neededItems:
   - water
 --- !u!1 &480131382
@@ -5443,9 +5429,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 1105695557}
   - 212: {fileID: 1105695556}
+  - 61: {fileID: 1105695559}
+  - 114: {fileID: 1105695558}
   m_Layer: 0
   m_Name: Floor (18)
-  m_TagString: Untagged
+  m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5477,7 +5465,7 @@ SpriteRenderer:
   m_SortingLayerID: -1089263921
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: cbbabe9e292f5604897926494bb38fef, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.93103445, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!4 &1105695557
@@ -5492,6 +5480,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 446404395}
   m_RootOrder: 18
+--- !u!114 &1105695558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1105695555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483518699dfd24d97bd12588628cd0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uimanager: {fileID: 1456457237}
+  conversationLines:
+  - "Hey, ich brauche Bambusst\xE4bchen und Wasser"
+  neededItems:
+  - bamboosticks
+  - water
+--- !u!61 &1105695559
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1105695555}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.6152344, y: 0.6152344}
 --- !u!1 &1121960442
 GameObject:
   m_ObjectHideFlags: 0
@@ -7974,9 +7993,10 @@ GameObject:
   - 212: {fileID: 1625146427}
   - 114: {fileID: 1625146425}
   - 95: {fileID: 1625146426}
+  - 114: {fileID: 1625146429}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8052,6 +8072,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1625146429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1625146424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c36d5fa854bdf4a7eadab16fac7773ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 96598430}
+  currentTask: []
+  currentNpcClient: {fileID: 0}
 --- !u!1 &1626083148
 GameObject:
   m_ObjectHideFlags: 0
