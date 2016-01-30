@@ -36,7 +36,11 @@ public class MoveToClick : MonoBehaviour {
 
     void FixedUpdate()
     {
-        if (_path.Count == 0) return;
+        if (_path.Count == 0)
+        {
+            GetComponent<Animator>().SetInteger("Direction", 0);
+            return;
+        }
 
         var target = _path.Peek();
 
@@ -61,14 +65,10 @@ public class MoveToClick : MonoBehaviour {
             GetComponent<Animator>().SetInteger("Direction", 3);
 		}
 
-
 		transform.position = Vector3.MoveTowards(transform.position, target.WorldPosition, 2f * Time.fixedDeltaTime);
-
-        
 
         if (transform.position == target.WorldPosition)
         {
-			GetComponent<Animator>().SetInteger("Direction", 0);
             _path.Dequeue();
         }
     }
@@ -115,9 +115,6 @@ public class MoveToClick : MonoBehaviour {
         };
         Node targetNode = grid.NodeFromWorldPoint(targetPos);
 
-        if (!targetNode.Walkable) return;
-
-
         List<Waypoint> openSet = new List<Waypoint>();
         HashSet<Waypoint> closedSet = new HashSet<Waypoint>();
         openSet.Add(startNode);
@@ -145,6 +142,13 @@ public class MoveToClick : MonoBehaviour {
             foreach (Node neighbour in grid.GetNeighbours(currentNode.Node)) {
 
                 var wayPoint = new Waypoint() { Node = neighbour };
+
+                if(neighbour == targetNode && !neighbour.Walkable)
+                {
+                    RetracePath(startNode.Node, targetNode, currentNode);
+                    return;
+                }
+
                 if (!neighbour.Walkable || closedSet.Contains(wayPoint)) {
 
 					continue;
