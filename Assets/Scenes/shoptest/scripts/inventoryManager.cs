@@ -122,8 +122,6 @@ public class inventoryManager : MonoBehaviour {
 			return;
 		}
 
-		int price = (int)Mathf.Floor((int)shopitems[item].price * sellMultiplier);
-
 		// substract item
 		slots[item] = (int)slots[item] - 1;
 

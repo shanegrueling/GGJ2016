@@ -7,6 +7,7 @@ public class npcBehaviour : MonoBehaviour {
 	public GameObject uimanager;
 
 	public string[] conversationLines;	// holds all the "before quest" lines of conversation
+	public GameObject possessedObject; 	// the possessed object (for the rite-screen)
 	public string[] neededItems; 		// which items are needed in order to solve the quest
 	public int karmaAward; 				// award for finishing the quest
 
@@ -14,6 +15,9 @@ public class npcBehaviour : MonoBehaviour {
 	private GameObject _playerObj;
 
 
+	/**
+	 * Called on start
+	 */
 	void Start() {
 
 		_playerObj = GameObject.FindGameObjectWithTag ("Player");
