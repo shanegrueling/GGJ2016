@@ -4,10 +4,15 @@ using UnityEngine;
 using Node = NavGrid.Node;
 
 public class MoveToClick : MonoBehaviour {
-    NavMeshAgent agent;
+
+	public bool inConversationOrMenu = false;
+
+	NavMeshAgent agent;
     private Vector3 destination;
     private NavGrid grid;
     private Queue<Node> _path;
+
+
 
     void Start()
     {
@@ -15,15 +20,19 @@ public class MoveToClick : MonoBehaviour {
         _path = new Queue<Node>();
     }
 
+
+
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+		if (!inConversationOrMenu && Input.GetMouseButtonDown(0))
         {
             var mousPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mousPoint.z = 0;
             FindPath(transform.position, mousPoint);
         }
     }
+
+
 
     void FixedUpdate()
     {
@@ -33,7 +42,7 @@ public class MoveToClick : MonoBehaviour {
 
         if (target.WorldPosition.x > Math.Round(transform.position.x*2)/2)
         {
-            GetComponent<SpriteRenderer>().flipX = true;
+			GetComponent<SpriteRenderer>().flipX = true;
             GetComponent<Animator>().SetInteger("Direction", 2);
         }
         else if (target.WorldPosition.x < Math.Round(transform.position.x * 2) / 2)
@@ -50,20 +59,25 @@ public class MoveToClick : MonoBehaviour {
         {
             GetComponent<SpriteRenderer>().flipX = false;
             GetComponent<Animator>().SetInteger("Direction", 3);
-        }
+		}
 
-        Debug.Log(GetComponent<Animator>().GetInteger("Direction"));
 
-        transform.position = Vector3.MoveTowards(transform.position, target.WorldPosition, 1f * Time.fixedDeltaTime);
+		transform.position = Vector3.MoveTowards(transform.position, target.WorldPosition, 2f * Time.fixedDeltaTime);
 
         
 
         if (transform.position == target.WorldPosition)
         {
+			GetComponent<Animator>().SetInteger("Direction", 0);
             _path.Dequeue();
         }
     }
 
+
+
+	/**
+	 * position & camera update
+	 */
     public void LateUpdate()
     {
         var position = transform.position;
@@ -72,6 +86,8 @@ public class MoveToClick : MonoBehaviour {
 
         Camera.main.transform.position = position;
     }
+
+
 
     private class Waypoint
     {
@@ -88,6 +104,8 @@ public class MoveToClick : MonoBehaviour {
         }
     }
 
+
+
     void FindPath(Vector3 startPos, Vector3 targetPos)
     {
         Waypoint startNode = new Waypoint
@@ -99,6 +117,7 @@ public class MoveToClick : MonoBehaviour {
 
         if (!targetNode.Walkable) return;
 
+
         List<Waypoint> openSet = new List<Waypoint>();
         HashSet<Waypoint> closedSet = new HashSet<Waypoint>();
         openSet.Add(startNode);
@@ -106,10 +125,10 @@ public class MoveToClick : MonoBehaviour {
         while (openSet.Count > 0)
         {
             Waypoint currentNode = openSet[0];
-            for (int i = 1; i < openSet.Count; i++)
-            {
-                if (openSet[i].FCost < currentNode.FCost || openSet[i].FCost == currentNode.FCost && openSet[i].HCost <= currentNode.HCost)
-                {
+            for (int i = 1; i < openSet.Count; i++) {
+
+                if (openSet[i].FCost < currentNode.FCost || openSet[i].FCost == currentNode.FCost && openSet[i].HCost <= currentNode.HCost) {
+					
                     currentNode = openSet[i];
                 }
             }
@@ -117,34 +136,38 @@ public class MoveToClick : MonoBehaviour {
             openSet.Remove(currentNode);
             closedSet.Add(currentNode);
 
-            if (currentNode.Node == targetNode)
-            {
+            if (currentNode.Node == targetNode) {
+
                 RetracePath(startNode.Node, targetNode, currentNode);
                 return;
             }
 
-            foreach (Node neighbour in grid.GetNeighbours(currentNode.Node))
-            {
+            foreach (Node neighbour in grid.GetNeighbours(currentNode.Node)) {
+
                 var wayPoint = new Waypoint() { Node = neighbour };
-                if (!neighbour.Walkable || closedSet.Contains(wayPoint))
-                {
-                    continue;
+                if (!neighbour.Walkable || closedSet.Contains(wayPoint)) {
+
+					continue;
                 }
 
                 int newMovementCostToNeighbour = currentNode.GCost + 1;
-                if (newMovementCostToNeighbour < wayPoint.GCost || !openSet.Contains(wayPoint))
-                {
+
+				if (newMovementCostToNeighbour < wayPoint.GCost || !openSet.Contains(wayPoint)) {
+
                     wayPoint.GCost = newMovementCostToNeighbour;
                     wayPoint.HCost = (int)distance(neighbour.X, neighbour.Y, targetNode.X, targetNode.Y);
                     wayPoint.Parent = currentNode;
 
-                    if (!openSet.Contains(wayPoint))
-                        openSet.Add(wayPoint);
+					if (!openSet.Contains (wayPoint)) {
+
+						openSet.Add (wayPoint);
+					}
                 }
             }
         }
-
     }
+
+
 
     private double distance(int x1, int y1, int x2, int y2)
     {
@@ -159,6 +182,8 @@ public class MoveToClick : MonoBehaviour {
 
         return Math.Sqrt(2) * diagonalSteps + straightSteps;
     }
+
+
 
     void RetracePath(Node startNode, Node endNode, Waypoint endWayPoint)
     {

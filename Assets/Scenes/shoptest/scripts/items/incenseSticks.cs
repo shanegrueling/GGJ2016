@@ -8,6 +8,7 @@ namespace itemsystem
 			
 			name = "Incense Sticks";
 			price = 30;
+			description = "Suffocate those bad vibes with some herbal fug";
 		}
 	}
 }

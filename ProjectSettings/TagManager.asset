@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - shrine
+  - npc
   - speechbubble
   layers:
   - Default
@@ -47,4 +49,7 @@ TagManager:
     locked: 0
   - name: NPC
     uniqueID: 110683475
+    locked: 0
+  - name: WorldspaceUI
+    uniqueID: 3068509437
     locked: 0

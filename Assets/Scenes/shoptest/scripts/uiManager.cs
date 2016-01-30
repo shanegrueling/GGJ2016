@@ -9,6 +9,7 @@ public class uiManager : MonoBehaviour {
 	public Animator shopUiAnimator;
 	public GameObject conversationUi;
 	public GameObject speechBubblePrefab;
+	public GameObject player;
 
 	private string[] _currentConversation;
 	private int _currentConversationLine = 0;
@@ -24,9 +25,11 @@ public class uiManager : MonoBehaviour {
 		if (inventoryUiAnimator.GetBool ("isHidden")) {
 
 			inventoryUiAnimator.SetBool ("isHidden", false);
+			player.GetComponent<MoveToClick> ().inConversationOrMenu = true;
 		} else {
 
 			inventoryUiAnimator.SetBool ("isHidden", true);
+			player.GetComponent<MoveToClick> ().inConversationOrMenu = false;
 		}
 	}
 	// END toggleInventory()
@@ -42,10 +45,12 @@ public class uiManager : MonoBehaviour {
 
 			inventoryUiAnimator.SetBool ("isHidden", false);
 			shopUiAnimator.SetBool ("isHidden", false);
+			player.GetComponent<MoveToClick> ().inConversationOrMenu = true;
 		} else {
 
 			inventoryUiAnimator.SetBool ("isHidden", true);
 			shopUiAnimator.SetBool ("isHidden", true);
+			player.GetComponent<MoveToClick> ().inConversationOrMenu = false;
 		}
 	}
 	// END toggleShop()
@@ -59,7 +64,7 @@ public class uiManager : MonoBehaviour {
 
 		if(inventoryUiAnimator.GetBool("isHidden") && shopUiAnimator.GetBool("isHidden") && !_inConversation) {
 
-			Debug.Log ("conversation started");
+			player.GetComponent<MoveToClick> ().inConversationOrMenu = true;
 
 			_inConversation = true;
 			_currentConversationPartner = convPartner;
@@ -88,6 +93,8 @@ public class uiManager : MonoBehaviour {
 		// is the current conversation continuable?
 		if(_currentConversationLine >= _currentConversation.Length) {
 
+			player.GetComponent<MoveToClick> ().inConversationOrMenu = false;
+
 			_inConversation = false;
 			_currentConversationLine = 0;
 			_currentConversationPartner.GetComponent<npcBehaviour> ().conversationEnded ();
@@ -95,8 +102,6 @@ public class uiManager : MonoBehaviour {
 
 			Destroy(GameObject.FindGameObjectsWithTag("speechbubble")[0]);
 		} else {
-
-			Debug.Log ("conversation continued");
 
 			GameObject bubble = GameObject.FindGameObjectsWithTag ("speechbubble")[0];
 			bubble.transform.Find("text").gameObject.GetComponent<Text>().text = _currentConversation [_currentConversationLine];

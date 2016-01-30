@@ -9,6 +9,7 @@ namespace itemsystem
 				
 			name = "Demon Arrows";
 			price = 150;
+			description = "For when you need the heavy weaponary...";
 		}
 	}
 }

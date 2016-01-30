@@ -10,6 +10,7 @@ public class NavGrid : MonoBehaviour {
         public Vector3 WorldPosition;
         public int X;
         public int Y;
+		public string Tag;
     }
 
     public Vector3 BottomLeft;
@@ -74,7 +75,7 @@ public class NavGrid : MonoBehaviour {
         int x = (int)Math.Round(worldPosition.x - BottomLeft.x);
         int y = (int)Math.Round(worldPosition.y - BottomLeft.y);
 
-        return grid[x, y];
+		return grid [x, y];
     }
 
     public List<Node> path;
