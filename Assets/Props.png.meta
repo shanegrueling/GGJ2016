@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: b210a13c98aa11846afa1bfe448a2c60
+timeCreated: 1454162823
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Shrine_Base
+    21300002: Shrine_Top
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 132
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Shrine_Base
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 494
+        width: 628
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 147.5, y: -58.262665}
+        - {x: 148.5, y: -56.262665}
+        - {x: 148.5, y: -45.262665}
+        - {x: 147.5, y: -40.262665}
+        - {x: 144.5, y: -19.262665}
+        - {x: 143.5, y: 74.737335}
+        - {x: 142.5, y: 89.737335}
+        - {x: 141.5, y: 90.737335}
+        - {x: -174.5, y: 90.737335}
+        - {x: -175.5, y: 75.737335}
+        - {x: -175.5, y: -53.262665}
+        - {x: -176.5, y: -54.262665}
+        - {x: -176.5, y: -67.262665}
+        - {x: -169.5, y: -79.262665}
+        - {x: -165.5, y: -77.262665}
+        - {x: -126.5, y: -78.262665}
+        - {x: -125.5, y: -87.262665}
+        - {x: -119.5, y: -90.262665}
+        - {x: -116.5, y: -90.262665}
+        - {x: -116.5, y: -89.262665}
+        - {x: -69.5, y: -90.262665}
+        - {x: 53.5, y: -90.262665}
+        - {x: 65.5, y: -83.262665}
+        - {x: 72.5, y: -74.262665}
+        - {x: 125.5, y: -74.262665}
+    - name: Shrine_Top
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 758
+        width: 628
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 128.5, y: -75.5387}
+        - {x: 95.5, y: -76.5387}
+        - {x: 96.5, y: -34.538696}
+        - {x: 115.5, y: -10.538696}
+        - {x: 208.5, y: -11.538696}
+        - {x: 211.5, y: -8.538696}
+        - {x: 211.5, y: -6.5386963}
+        - {x: 210.5, y: -2.5386963}
+        - {x: 209.5, y: 88.4613}
+        - {x: 190.5, y: 103.4613}
+        - {x: 171.5, y: 104.4613}
+        - {x: 109.5, y: 134.4613}
+        - {x: 89.5, y: 155.4613}
+        - {x: 80.5, y: 170.4613}
+        - {x: -77.5, y: 170.4613}
+        - {x: -94.5, y: 147.4613}
+        - {x: -106.5, y: 134.4613}
+        - {x: -137.5, y: 115.4613}
+        - {x: -166.5, y: 104.4613}
+        - {x: -185.5, y: 102.4613}
+        - {x: -204.5, y: 90.4613}
+        - {x: -206.5, y: 86.4613}
+        - {x: -206.5, y: -2.5386963}
+        - {x: -209.5, y: -1.5386963}
+        - {x: -209.5, y: -9.538696}
+        - {x: -208.5, y: -15.538696}
+        - {x: -204.5, y: -11.538696}
+        - {x: -86.5, y: -71.5387}
+        - {x: -132.5, y: -71.5387}
+        - {x: -138.5, y: -72.5387}
+        - {x: -140.5, y: -85.5387}
+        - {x: -138.5, y: -147.5387}
+        - {x: -170.5, y: -146.5387}
+        - {x: -176.5, y: -154.5387}
+        - {x: -174.5, y: -169.5387}
+        - {x: 141.5, y: -169.5387}
+        - {x: 141.5, y: -87.5387}
+        - {x: 139.5, y: -82.5387}
+        - {x: 131.5, y: -74.5387}
+      - - {x: 143.5, y: -74.5387}
+        - {x: 141.5, y: -76.5387}
+        - {x: 141.5, y: -79.5387}
+        - {x: 143.5, y: -81.5387}
+        - {x: 146.5, y: -81.5387}
+        - {x: 148.5, y: -79.5387}
+        - {x: 148.5, y: -76.5387}
+        - {x: 146.5, y: -74.5387}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
