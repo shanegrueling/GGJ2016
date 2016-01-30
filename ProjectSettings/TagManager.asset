@@ -3,10 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - shrine
-  - npc
-  - speechbubble
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -50,6 +47,6 @@ TagManager:
   - name: NPC
     uniqueID: 110683475
     locked: 0
-  - name: WorldspaceUI
-    uniqueID: 3068509437
+  - name: UI
+    uniqueID: 1352178711
     locked: 0
