@@ -58,11 +58,11 @@ public class npcBehaviour : MonoBehaviour {
 			// test if all required items are in the players inventory
 			foreach(string needed in neededItems) {
 
-//				if(!playerInventory.Contains(needed) || (int)playerInventory[needed] <= 0) {
-//
-//					uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("I think you still need some more things for your ritual", gameObject);
-//					return;
-//				}
+				if(!playerInventory.Contains(needed) || (int)playerInventory[needed] <= 0) {
+
+					uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("I think you still need some more things for your ritual", gameObject);
+					return;
+				}
 			}
 
 			// delete items from player inventory

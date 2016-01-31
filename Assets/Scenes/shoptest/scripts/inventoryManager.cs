@@ -119,7 +119,7 @@ public class inventoryManager : MonoBehaviour {
 	public void removeItem(string item) {
 
 		// does the player has at least one of the given items
-		if((int)slots[item] <= 0) {
+		if(!slots.Contains(item) || (int)slots[item] <= 0) {
 
 			return;
 		}

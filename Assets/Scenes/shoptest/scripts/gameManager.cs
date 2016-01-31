@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class gameManager : MonoBehaviour {
@@ -9,7 +10,7 @@ public class gameManager : MonoBehaviour {
 	public float karmaToBalanceRatio = 0.0005f;
 
 	private string _gamestate = "ingame";
-	private float _timeToNextEvent = 25.0f;
+	private float _timeToNextEvent = 5.0f;
 	private float _balanceLevel = 0.5f;
 
 	public GameObject _progressBar;
@@ -41,7 +42,7 @@ public class gameManager : MonoBehaviour {
 				_timeToNextEvent = Random.Range (15, 25);
 
 				// loosing some balance here, eh?
-				_balanceLevel -= 0.1f;
+				_balanceLevel -= 0.5f;
 			}
 
 			// update progressbar -- later to replace with inking
@@ -51,11 +52,13 @@ public class gameManager : MonoBehaviour {
 			// balancelevel <= 0? Uhoh, you lost...
 			if(_balanceLevel <= 0) {
 
+				SceneManager.LoadScene ("lost");
 				Debug.Log ("You just lost");
 			}
 
 			if(_balanceLevel >= 100) {
 
+				SceneManager.LoadScene ("winscreen");
 				Debug.Log ("You just won");
 			}
 		}
