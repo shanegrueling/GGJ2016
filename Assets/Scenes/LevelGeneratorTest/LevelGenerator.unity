@@ -1635,6 +1635,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 101144, guid: 14319dc2506d16d409f266bda70c1792, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14319dc2506d16d409f266bda70c1792, type: 2}
   m_IsPrefabParent: 0
@@ -1798,8 +1802,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c10807cb029704c9e9e8b29348a2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 50
-  Height: 50
+  Width: 100
+  Height: 100
 --- !u!114 &573356005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1819,6 +1823,11 @@ MonoBehaviour:
   Objects:
   - {fileID: 179016, guid: 5e9c1b49ee88aa74791a107d8b29cac5, type: 2}
   - {fileID: 192920, guid: 22ee1a5e159c94b4e86951a4d312f740, type: 2}
+  - {fileID: 133622, guid: 7c99541d3e3aa8f46b386e810c87ec66, type: 2}
+  WayMask:
+    serializedVersion: 2
+    m_Bits: 0
+  Seed: 80
 --- !u!4 &573356006
 Transform:
   m_ObjectHideFlags: 0

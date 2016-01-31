@@ -15,9 +15,17 @@ public class LevelGenerator : MonoBehaviour {
     public GameObject[,,] Level;
 
     public IList<BoxCollider2D> WayBoxes;
+
+    public LayerMask WayMask;
+
+    public int Seed;
     
 	// Use this for initialization
 	void Awake () {
+
+        Random.seed = Seed;
+
+        WayMask = ~(1 << LayerMask.NameToLayer("Way"));
         Generate();
 	}
 	
@@ -85,12 +93,12 @@ public class LevelGenerator : MonoBehaviour {
         //Place objects
         var failure = 0;
         var i = 0;
-        while (i < 6)
+        while (i < 10)
         {
 
             var home = Objects[0];
 
-            var position = Vector3.zero;
+            var position = Vector2.zero;
 
             var baseSize = home.GetComponentInChildren<BoxCollider2D>().size;
 
@@ -105,14 +113,33 @@ public class LevelGenerator : MonoBehaviour {
                     continue;
                 }
 
-                position = new Vector3(posX - Size.x / 2, posY - Size.y / 2, 1);
-            } while (failure < 20 && Physics2D.BoxCast(position, new Vector2(baseSize.x + 2, baseSize.y + 10), 0, Vector2.zero));
-            if(failure >= 20)
+                position = new Vector2(posX - Size.x / 2, posY - Size.y / 2);
+
+                var checkPosition = new Vector2(position.x, position.y + 0.5f);
+
+                if (!Physics2D.BoxCast(checkPosition, new Vector2(baseSize.x + 2, baseSize.y + 10), 0, Vector2.zero, 1, WayMask)
+                    && Physics2D.Raycast(checkPosition + Vector2.down*(baseSize.y/2), Vector2.down, 0.2f, 1 << LayerMask.NameToLayer("Way"))
+                    && !Physics2D.BoxCast(checkPosition, new Vector2(baseSize.x, baseSize.y), 0, Vector2.zero, 1, 1 << LayerMask.NameToLayer("Way")))
+                {
+                    Debug.DrawLine(checkPosition + Vector2.down * (baseSize.y / 2), checkPosition + Vector2.down * ((baseSize.y / 2) + 0.2f), Color.red, 1000);
+
+                    var bottomLeft = checkPosition + (Vector2.left * (baseSize.x / 2)) + (Vector2.down * (baseSize.y / 2));
+                    //bottomLeft.y += 0.5f;
+
+                    Debug.DrawLine(bottomLeft, bottomLeft + (Vector2.right * baseSize.x), Color.red, 1000);
+                    Debug.DrawLine(bottomLeft, bottomLeft + (Vector2.up * baseSize.y), Color.red, 1000);
+                    Debug.DrawLine(bottomLeft + (Vector2.up * baseSize.y), bottomLeft + (Vector2.right * baseSize.x) + (Vector2.up * baseSize.y), Color.red, 1000);
+                    Debug.DrawLine(bottomLeft + (Vector2.right * baseSize.x), bottomLeft + (Vector2.up * baseSize.y) + (Vector2.right * baseSize.x), Color.red, 1000);
+                    break;
+                }
+
+            } while (failure < 1000);
+            ++i;
+            if (failure >= 1000)
             {
-                break;
+                continue;
             }
             failure = 0;
-            ++i;
             var obj = (GameObject)Instantiate(home, position, new Quaternion());
 
             obj.transform.FindChild("Top").gameObject.GetComponent<SpriteRenderer>().sortingOrder = (int)position.y * -1;
@@ -255,7 +282,14 @@ public class LevelGenerator : MonoBehaviour {
                 throw new System.Exception("ASDHASDKJASD");
             }
         } while ((oldDirection + direction) == Vector2.zero || startDirection + direction == Vector2.zero);
-        
+
+        if(direction == left)
+        {
+            var multi = direction == Vector2.left ? thickness + 1 : thickness;
+
+            var multi2 = direction == Vector2.up ? 3 : 2;
+            GenerateLantern(currentPoint - oldDirection * multi2 + left * multi);
+        }
         GenerateWays(direction, currentPoint, startDirection);
         if(Random.Range(0,3) == 0 && direction + oldDirection != Vector2.zero)
         {
@@ -266,6 +300,20 @@ public class LevelGenerator : MonoBehaviour {
         {
             GenerateWays(oldDirection, currentPoint, startDirection);
         }
+    }
+
+    private void GenerateLantern(Vector2 position)
+    {
+
+        var movedPosition = position - Size / 2;
+
+        if (position.x < 0 || position.x >= Size.x || position.y < 0 || position.y >= Size.y) return;
+
+        var obj = (GameObject)Instantiate(Objects[2], movedPosition, Quaternion.identity);
+
+        obj.transform.FindChild("Top").gameObject.GetComponent<SpriteRenderer>().sortingOrder = (int)position.y * -1;
+
+        obj.transform.SetParent(transform, false);
     }
 
     void OnDrawGizmos()
