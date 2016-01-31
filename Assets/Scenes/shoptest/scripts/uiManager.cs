@@ -11,6 +11,7 @@ public class uiManager : MonoBehaviour {
 	public GameObject speechBubblePrefab;
 	public GameObject player;
 	public GameObject closeShopBtn;
+	public GameObject shopAudio;
 
 	public GameObject attackAnimationUi;
 
@@ -43,6 +44,8 @@ public class uiManager : MonoBehaviour {
 	 * show / hide shop
 	 */
 	public void toggleShop() {
+
+		shopAudio.GetComponent<AudioSource> ().Play ();
 
 		if (shopUiAnimator.GetBool ("isHidden")) {
 
@@ -150,7 +153,7 @@ public class uiManager : MonoBehaviour {
 
 	private IEnumerator showShopClose()
 	{
-		yield return new WaitForSeconds (1.4f);
+		yield return new WaitForSeconds (.8f);
 		closeShopBtn.SetActive (true);
 	}
 }

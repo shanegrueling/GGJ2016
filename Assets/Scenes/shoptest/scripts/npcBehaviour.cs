@@ -11,6 +11,8 @@ public class npcBehaviour : MonoBehaviour {
 	public string[] neededItems; 		// which items are needed in order to solve the quest
 	public int karmaAward; 				// award for finishing the quest
 	public GameObject attackStage;
+	public GameObject gameManager;
+	public GameObject speaktosound;
 
 	private bool _questSolved = false; 	// is the quest aready done?
 	private GameObject _playerObj;
@@ -39,6 +41,8 @@ public class npcBehaviour : MonoBehaviour {
 			return;
 		}
 
+		speaktosound.GetComponent<AudioSource> ().Play ();
+
 		// does the player already has an other quest?
 /*		if(_playerObj.GetComponent<player>().currentNpcClient != gameObject && _playerObj.GetComponent<player>().currentNpcClient != null) {
 
@@ -54,11 +58,11 @@ public class npcBehaviour : MonoBehaviour {
 			// test if all required items are in the players inventory
 			foreach(string needed in neededItems) {
 
-				if(!playerInventory.Contains(needed) || (int)playerInventory[needed] <= 0) {
-
-					uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("I think you still need some more things for your ritual", gameObject);
-					return;
-				}
+//				if(!playerInventory.Contains(needed) || (int)playerInventory[needed] <= 0) {
+//
+//					uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("I think you still need some more things for your ritual", gameObject);
+//					return;
+//				}
 			}
 
 			// delete items from player inventory
@@ -66,6 +70,8 @@ public class npcBehaviour : MonoBehaviour {
 
 				_playerObj.GetComponent<player> ().inventory.GetComponent<inventoryManager> ().removeItem (needed);
 			}
+
+			gameManager.GetComponent<gameManager> ().addBalance (0.1f);
 
 			_questSolved = true;
 			_playerObj.GetComponent<player> ().inventory.GetComponent<inventoryManager> ().karma += karmaAward;

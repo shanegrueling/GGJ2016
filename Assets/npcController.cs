@@ -7,7 +7,10 @@ public class npcController : MonoBehaviour {
 	public GameObject uiManager;
 	public GameObject npcPrefab;
 	public GameObject atkStage;
+	public GameObject gameManager;
+	public GameObject speaktosound;
 	public Sprite[] npcSprite;
+
 
 
 	// Use this for initialization
@@ -40,6 +43,8 @@ public class npcController : MonoBehaviour {
 		tmpNpc.GetComponent<SpriteRenderer>().sprite = npcSprite[type];
 		tmpNpc.GetComponent<npcBehaviour>().uimanager = uiManager;
 		tmpNpc.GetComponent<npcBehaviour>().attackStage = atkStage;
+		tmpNpc.GetComponent<npcBehaviour>().gameManager = gameManager;
+		tmpNpc.GetComponent<npcBehaviour>().speaktosound = speaktosound;
 
 
 		// create random "needed" items
