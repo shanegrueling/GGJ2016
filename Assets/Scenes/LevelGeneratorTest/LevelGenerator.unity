@@ -168,8 +168,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074423fd709302b4a9d0ed284175bfa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Size: {x: 50, y: 50}
-  Ground: {fileID: 188518, guid: 7d043ba600b9531469a4738d63a561e7, type: 2}
+  Size: {x: 100, y: 100}
+  Ground: {fileID: 164006, guid: b982e584dad19764184cc0a0c52452e6, type: 2}
+  Way: {fileID: 188518, guid: 7d043ba600b9531469a4738d63a561e7, type: 2}
   ShrineGround: {fileID: 126910, guid: cbfc870f11b6c7e4b838b72256b93db8, type: 2}
   Shrine: {fileID: 115818, guid: b2979af6c4442a045a20aea07f28ffe0, type: 2}
   Objects:

@@ -65,7 +65,7 @@ public class MoveToClick : MonoBehaviour {
             GetComponent<Animator>().SetInteger("Direction", 3);
 		}
 
-		transform.position = Vector3.MoveTowards(transform.position, target.WorldPosition, 2f * Time.fixedDeltaTime);
+		transform.position = Vector3.MoveTowards(transform.position, target.WorldPosition, 4f * Time.fixedDeltaTime);
 
         if (transform.position == target.WorldPosition)
         {
