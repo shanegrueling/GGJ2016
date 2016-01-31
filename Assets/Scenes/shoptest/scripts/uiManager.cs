@@ -12,6 +12,8 @@ public class uiManager : MonoBehaviour {
 	public GameObject player;
 	public GameObject closeShopBtn;
 
+	public GameObject attackAnimationUi;
+
 	private string[] _currentConversation;
 	private int _currentConversationLine = 0;
 	private GameObject _currentConversationPartner;

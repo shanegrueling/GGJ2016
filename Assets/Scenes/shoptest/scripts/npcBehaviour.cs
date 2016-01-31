@@ -10,6 +10,7 @@ public class npcBehaviour : MonoBehaviour {
 	public GameObject possessedObject; 	// the possessed object (for the rite-screen)
 	public string[] neededItems; 		// which items are needed in order to solve the quest
 	public int karmaAward; 				// award for finishing the quest
+	public GameObject attackStage;
 
 	private bool _questSolved = false; 	// is the quest aready done?
 	private GameObject _playerObj;
@@ -70,7 +71,13 @@ public class npcBehaviour : MonoBehaviour {
 			_playerObj.GetComponent<player>().currentTask = null;
 			_playerObj.GetComponent<player>().currentNpcClient = null;
 
-			uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("Yes you've got everything you need. Thanks pal!", gameObject);
+			attackStage.transform.Find ("background").GetComponent<Animator> ().SetBool ("attack", true);
+			attackStage.transform.Find ("foe").GetComponent<Animator> ().SetBool ("attack", true);
+			attackStage.transform.Find ("Tanuki").GetComponent<Animator> ().SetBool ("attack", true);
+			StartCoroutine (stopAttack ());
+
+
+//			uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("Yes you've got everything you need. Thanks pal!", gameObject);
 
 			return;
 		}
@@ -108,4 +115,20 @@ public class npcBehaviour : MonoBehaviour {
 		}
 	}
 	// END conversationEnded()
+
+
+	private IEnumerator stopAttack()
+	{
+		yield return new WaitForSeconds (1.0f);
+		attackStage.transform.Find ("background").GetComponent<Animator> ().SetBool ("attack", false);
+		attackStage.transform.Find ("foe").GetComponent<Animator> ().SetBool ("attack", false);
+		attackStage.transform.Find ("Tanuki").GetComponent<Animator> ().SetBool ("attack", false);
+
+		attackStage.transform.Find ("background").GetComponent<Animator>().Play("attack-bg-animation", -1, 0f);
+		attackStage.transform.Find ("foe").GetComponent<Animator>().Play("luggage_attack", -1, 0f);
+		attackStage.transform.Find ("Tanuki").GetComponent<Animator>().Play("tanuki_attack", -1, 0f);
+//		attackStage.transform.Find ("background").GetComponent<Animator>().Stop();
+//		attackStage.transform.Find ("foe").GetComponent<Animator>().Stop();
+//		attackStage.transform.Find ("Tanuki").GetComponent<Animator>().Stop();
+	}
 }
