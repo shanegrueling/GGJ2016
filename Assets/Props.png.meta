@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b210a13c98aa11846afa1bfe448a2c60
-timeCreated: 1454184712
+timeCreated: 1454238083
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -15,6 +15,8 @@ TextureImporter:
     21300016: Floor_3
     21300018: Floor_4
     21300020: Props_0
+    21300022: Lantern_Base
+    21300024: Lantern_Top
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +32,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 1
+  isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
@@ -57,7 +59,7 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 132
   alphaIsTransparency: 1
-  textureType: 5
+  textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
@@ -580,6 +582,52 @@ TextureImporter:
         - {x: -45.30533, y: -45.294678}
         - {x: 45.69467, y: -45.294678}
         - {x: 45.69467, y: 45.705322}
+    - name: Lantern_Base
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1679
+        width: 264
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -89.388, y: 45.697266}
+        - {x: -89.388, y: -20.302734}
+        - {x: -76.388, y: -45.302734}
+        - {x: 62.612, y: -45.302734}
+        - {x: 89.612, y: -26.302734}
+        - {x: 89.612, y: 45.697266}
+    - name: Lantern_Top
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1811
+        width: 264
+        height: 1056
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 82.612, y: 251.30933}
+        - {x: 82.612, y: 353.30933}
+        - {x: -59.388, y: 353.30933}
+        - {x: -61.388, y: 324.30933}
+        - {x: -61.388, y: 245.30933}
+        - {x: -32.388, y: 147.30933}
+        - {x: -6.3880005, y: 155.30933}
+        - {x: -14.3880005, y: -294.69067}
+        - {x: -41.388, y: -359.69067}
+        - {x: -41.388, y: -360.69067}
+        - {x: 42.612, y: -360.69067}
+        - {x: 39.612, y: -301.69067}
+        - {x: 20.612, y: -291.69067}
+        - {x: 57.612, y: 198.30933}
+      - - {x: -90.388, y: 361.30933}
+        - {x: -90.388, y: 357.30933}
+        - {x: 90.612, y: 357.30933}
+        - {x: 90.612, y: 361.30933}
     outline: []
   spritePackingTag: 
   userData: 
