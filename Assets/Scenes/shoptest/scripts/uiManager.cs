@@ -65,7 +65,7 @@ public class uiManager : MonoBehaviour {
 	/**
 	 * open speech bubble to start a conversation
 	 */
-	public void startConversation(string[] conversationLines, GameObject convPartner) {
+	public void startConversation(string[] neededItems, GameObject convPartner) {
 
 		if(inventoryUiAnimator.GetBool("isHidden") && shopUiAnimator.GetBool("isHidden") && !_inConversation) {
 
@@ -73,12 +73,19 @@ public class uiManager : MonoBehaviour {
 
 			_inConversation = true;
 			_currentConversationPartner = convPartner;
-			_currentConversation = conversationLines;
 
 			GameObject speechBubble = Instantiate (speechBubblePrefab);
 			speechBubble.transform.SetParent (conversationUi.transform, false);
 			speechBubble.transform.position = convPartner.transform.position;
-			speechBubble.transform.Find ("text").GetComponent<Text> ().text = conversationLines [_currentConversationLine];
+//			speechBubble.transform.Find ("text").GetComponent<Text> ().text = conversationLines [_currentConversationLine];
+
+			speechBubble.transform.Find ("text").gameObject.SetActive (false);
+
+			foreach(string item in neededItems) {
+
+				speechBubble.transform.Find (item).gameObject.SetActive (true);
+			}
+
 
 			Button button = speechBubble.GetComponent<Button> ();
 			button.onClick.AddListener (continueConversation);

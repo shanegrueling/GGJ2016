@@ -84,13 +84,14 @@ public class npcBehaviour : MonoBehaviour {
 			return;
 		}
 
+
 		// Is the quest already done?
 		if (!_questSolved) {
 
 			// does the NPC has anything to say?
 			if (conversationLines.Length > 0) {
 		
-				uimanager.GetComponent<uiManager> ().startConversation (conversationLines, gameObject);
+				uimanager.GetComponent<uiManager> ().startConversation (neededItems, gameObject);
 			}
 
 			return;

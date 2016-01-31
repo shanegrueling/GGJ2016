@@ -1,43 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &101144
+--- !u!1 &186170
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 482794}
-  - 212: {fileID: 21234118}
-  - 95: {fileID: 9529758}
-  - 61: {fileID: 6127848}
-  - 114: {fileID: 11498150}
-  - 114: {fileID: 11479882}
+  - 4: {fileID: 496794}
+  - 212: {fileID: 21273664}
+  - 114: {fileID: 11455712}
+  - 61: {fileID: 6149840}
   m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
+  m_Name: npc
+  m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &482794
+--- !u!4 &496794
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101144}
+  m_GameObject: {fileID: 186170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalPosition: {x: -3.63, y: -4.36, z: 0}
+  m_LocalScale: {x: 0.58829284, y: 0.58829284, z: 0.58829284}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!61 &6127848
+--- !u!61 &6149840
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101144}
+  m_GameObject: {fileID: 186170}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -45,44 +43,13 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 4.840909, y: 5.5075755}
---- !u!95 &9529758
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101144}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0ed0973ae736686489b9681ee7866108, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11479882
+  m_Size: {x: 2.6200001, y: 5.5099998}
+--- !u!114 &11455712
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c36d5fa854bdf4a7eadab16fac7773ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
-  currentTask: []
-  currentNpcClient: {fileID: 0}
---- !u!114 &11498150
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101144}
+  m_GameObject: {fileID: 186170}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 483518699dfd24d97bd12588628cd0ec, type: 3}
@@ -98,12 +65,12 @@ MonoBehaviour:
   - water
   karmaAward: 50
   attackStage: {fileID: 0}
---- !u!212 &21234118
+--- !u!212 &21273664
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 101144}
+  m_GameObject: {fileID: 186170}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -124,7 +91,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 110683475
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f3f8549f758ef0343802d0c2e1c07692, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4101feba985cd437b81b5e2193cea5a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -137,5 +104,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 101144}
+  m_RootGameObject: {fileID: 186170}
   m_IsPrefabParent: 1

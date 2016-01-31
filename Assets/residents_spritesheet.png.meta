@@ -1,0 +1,237 @@
+fileFormatVersion: 2
+guid: 4101feba985cd437b81b5e2193cea5a1
+timeCreated: 1454234384
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: residents_spritesheet_0
+    21300002: residents_spritesheet_1
+    21300004: residents_spritesheet_2
+    21300006: residents_spritesheet_3
+    21300008: residents_spritesheet_4
+    21300010: residents_spritesheet_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 1
+  spritePivot: {x: 0, y: 1}
+  spriteBorder: {x: 49, y: 69, z: 69, w: 43}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: residents_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 52
+        width: 262
+        height: 551
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 61.347237, y: -8.724396}
+        - {x: 92.34724, y: 41.275604}
+        - {x: 92.34724, y: 177.2756}
+        - {x: 82.34724, y: 229.2756}
+        - {x: -15.652763, y: 229.2756}
+        - {x: -61.652763, y: 213.2756}
+        - {x: -62.652763, y: 207.2756}
+        - {x: -62.652763, y: 55.275604}
+        - {x: -47.652763, y: -118.724396}
+        - {x: -36.652763, y: -187.7244}
+        - {x: -62.652763, y: -211.7244}
+        - {x: -62.652763, y: -239.7244}
+        - {x: 53.347237, y: -239.7244}
+        - {x: 53.347237, y: -226.7244}
+        - {x: 47.347237, y: -211.7244}
+        - {x: 54.347237, y: -120.724396}
+    - name: residents_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 41
+        width: 229
+        height: 547
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 53.630554, y: 60.06346}
+        - {x: 46.630554, y: 67.06346}
+        - {x: 36.630554, y: 72.06346}
+        - {x: 46.630554, y: 86.06346}
+        - {x: 57.630554, y: 103.06346}
+        - {x: 95.630554, y: 161.06346}
+        - {x: 95.630554, y: 194.06346}
+        - {x: 48.630554, y: 230.06346}
+        - {x: -58.369446, y: 230.06346}
+        - {x: -75.369446, y: 223.06346}
+        - {x: -75.369446, y: 100.06346}
+        - {x: -70.369446, y: 89.06346}
+        - {x: -75.369446, y: 12.063461}
+        - {x: -75.369446, y: -92.93654}
+        - {x: -44.369446, y: -174.93654}
+        - {x: -73.369446, y: -221.93654}
+        - {x: -44.369446, y: -227.93654}
+        - {x: 46.630554, y: -227.93654}
+        - {x: 65.630554, y: -216.93654}
+        - {x: 40.630554, y: -190.93654}
+        - {x: 76.630554, y: -75.93654}
+    - name: residents_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 63
+        width: 209
+        height: 391
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 75.342224, y: -64.51224}
+        - {x: 75.342224, y: 146.48776}
+        - {x: 46.342224, y: 165.48776}
+        - {x: -7.657776, y: 165.48776}
+        - {x: -42.657776, y: 161.48776}
+        - {x: -61.657776, y: 148.48776}
+        - {x: -74.657776, y: 125.48776}
+        - {x: -74.657776, y: -115.51224}
+        - {x: -28.657776, y: -136.51224}
+        - {x: -71.657776, y: -137.51224}
+        - {x: -73.657776, y: -139.51224}
+        - {x: -73.657776, y: -173.51224}
+        - {x: -72.657776, y: -175.51224}
+        - {x: 75.342224, y: -175.51224}
+        - {x: 75.342224, y: -172.51224}
+        - {x: 72.342224, y: -134.51224}
+        - {x: 28.342224, y: -126.51224}
+        - {x: 71.342224, y: -118.51224}
+    - name: residents_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 50
+        width: 315
+        height: 395
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 73.92566, y: 33.418854}
+        - {x: 118.92566, y: 35.418854}
+        - {x: 135.92566, y: 40.418854}
+        - {x: 135.92566, y: 60.418854}
+        - {x: 127.92566, y: 70.41885}
+        - {x: 135.92566, y: 81.41885}
+        - {x: 135.92566, y: 119.41885}
+        - {x: 126.92566, y: 138.41885}
+        - {x: 77.92566, y: 152.41885}
+        - {x: 38.92566, y: 176.41885}
+        - {x: -30.07434, y: 176.41885}
+        - {x: -135.07434, y: 139.41885}
+        - {x: -136.07434, y: 136.41885}
+        - {x: -136.07434, y: 48.418854}
+        - {x: -122.07434, y: 24.418854}
+        - {x: -73.07434, y: 24.418854}
+        - {x: -69.07434, y: -108.58115}
+        - {x: -72.07434, y: -130.58115}
+        - {x: -72.07434, y: -163.58115}
+        - {x: -70.07434, y: -165.58115}
+        - {x: 77.92566, y: -165.58115}
+        - {x: 74.92566, y: -125.58115}
+        - {x: 74.92566, y: -100.58115}
+    - name: residents_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 59
+        width: 239
+        height: 393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 61.06433, y: 31.774261}
+        - {x: 60.06433, y: 30.774261}
+        - {x: 54.06433, y: 30.774261}
+        - {x: 62.06433, y: 31.774261}
+        - {x: 76.06433, y: 43.77426}
+        - {x: 91.06433, y: 81.77426}
+        - {x: 91.06433, y: 144.77426}
+        - {x: 43.06433, y: 172.77426}
+        - {x: -64.93567, y: 172.77426}
+        - {x: -77.93567, y: 150.77426}
+        - {x: -77.93567, y: 57.77426}
+        - {x: -50.93567, y: 19.774261}
+        - {x: -51.93567, y: -172.22574}
+        - {x: 91.06433, y: -172.22574}
+        - {x: 91.06433, y: 34.77426}
+        - {x: 78.06433, y: 31.774261}
+    - name: residents_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 63
+        width: 227
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 43.70581, y: 31.987762}
+        - {x: 48.70581, y: 34.987762}
+        - {x: 62.70581, y: 61.987762}
+        - {x: 83.70581, y: 90.98776}
+        - {x: 42.70581, y: 160.98776}
+        - {x: -82.29419, y: 160.98776}
+        - {x: -92.29419, y: 135.98776}
+        - {x: -92.29419, y: 32.987762}
+        - {x: -51.29419, y: 0.98776245}
+        - {x: -44.29419, y: -174.01224}
+        - {x: 86.70581, y: -174.01224}
+        - {x: 86.70581, y: -134.01224}
+        - {x: 82.70581, y: 24.987762}
+        - {x: 73.70581, y: 30.987762}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

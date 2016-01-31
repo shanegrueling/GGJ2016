@@ -23,7 +23,7 @@ public class inventoryManager : MonoBehaviour {
 	void Start() {
 
 		shopitems ["water"] 		= new water();
-		shopitems ["earth"] 		= new earth();
+		shopitems ["kagami"] 		= new kagami();
 		shopitems ["omamori"] 		= new omamori();
 		shopitems ["komainu"] 		= new komainu();
 		shopitems ["whitespell"] 	= new whitespell();
