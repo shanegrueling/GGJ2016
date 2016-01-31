@@ -63,6 +63,16 @@ public class LevelGenerator : MonoBehaviour {
         var shrine = (GameObject)Instantiate(Shrine, center, new Quaternion());
         shrine.transform.SetParent(transform, true);
 
+		shrine.AddComponent<BoxCollider2D> ();
+		shrine.AddComponent<shopBehaviour> ();
+
+		shrine.GetComponent<BoxCollider2D> ().size = new Vector2 (4, 2);
+
+		shopBehaviour shopbehaviourScript = shrine.GetComponent<shopBehaviour> ();
+		shopbehaviourScript.player = GameObject.Find ("Player");
+		shopbehaviourScript.uiManager = GameObject.Find ("UiManager");
+
+
         //Place BoundingBox for shrine
         var shrineBox = new GameObject();
 

@@ -1139,7 +1139,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1001, y: 84}
+  m_AnchoredPosition: {x: -907, y: 84}
   m_SizeDelta: {x: 315.7, y: 222.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &199831203
@@ -5966,7 +5966,7 @@ MonoBehaviour:
   neededItems:
   - whitespell
   karmaAward: 75
-  attackStage: {fileID: 0}
+  attackStage: {fileID: 847943356}
 --- !u!61 &1105695559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6214,7 +6214,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -710, y: 625}
+  m_AnchoredPosition: {x: -710, y: 631}
   m_SizeDelta: {x: 700, y: 0}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!95 &1168759944

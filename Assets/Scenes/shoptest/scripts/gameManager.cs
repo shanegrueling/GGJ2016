@@ -19,7 +19,7 @@ public class gameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 	
-		_progressBar = karmaUi.transform.Find ("progressbar").gameObject.GetComponent<RectTransform>();
+//		_progressBar = karmaUi.transform.Find ("progressbar").gameObject.GetComponent<RectTransform>();
 		_screenWidth = Screen.width;
 
 		_progressBar.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Right, 0, _balanceLevel * _screenWidth);
@@ -45,7 +45,7 @@ public class gameManager : MonoBehaviour {
 			}
 
 			// update progressbar -- later to replace with inking
-			_progressBar.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, _screenWidth - _balanceLevel * _screenWidth);
+//			_progressBar.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0, _screenWidth - _balanceLevel * _screenWidth);
 
 
 			// balancelevel <= 0? Uhoh, you lost...

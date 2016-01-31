@@ -30,10 +30,11 @@ public class npcBehaviour : MonoBehaviour {
 	 */
 	void OnMouseUp() {
 
+
 		// is the NPC within reach of the player?
 		float distance = Vector3.Distance (_playerObj.transform.position, transform.position);
 
-		if(distance > 1.5) {
+		if(distance > 5) {
 
 			return;
 		}
@@ -74,6 +75,7 @@ public class npcBehaviour : MonoBehaviour {
 			attackStage.transform.Find ("background").GetComponent<Animator> ().SetBool ("attack", true);
 			attackStage.transform.Find ("foe").GetComponent<Animator> ().SetBool ("attack", true);
 			attackStage.transform.Find ("Tanuki").GetComponent<Animator> ().SetBool ("attack", true);
+
 			StartCoroutine (stopAttack ());
 
 
@@ -123,12 +125,5 @@ public class npcBehaviour : MonoBehaviour {
 		attackStage.transform.Find ("background").GetComponent<Animator> ().SetBool ("attack", false);
 		attackStage.transform.Find ("foe").GetComponent<Animator> ().SetBool ("attack", false);
 		attackStage.transform.Find ("Tanuki").GetComponent<Animator> ().SetBool ("attack", false);
-
-		attackStage.transform.Find ("background").GetComponent<Animator>().Play("attack-bg-animation", -1, 0f);
-		attackStage.transform.Find ("foe").GetComponent<Animator>().Play("luggage_attack", -1, 0f);
-		attackStage.transform.Find ("Tanuki").GetComponent<Animator>().Play("tanuki_attack", -1, 0f);
-//		attackStage.transform.Find ("background").GetComponent<Animator>().Stop();
-//		attackStage.transform.Find ("foe").GetComponent<Animator>().Stop();
-//		attackStage.transform.Find ("Tanuki").GetComponent<Animator>().Stop();
 	}
 }
