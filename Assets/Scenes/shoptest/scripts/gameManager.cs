@@ -10,7 +10,7 @@ public class gameManager : MonoBehaviour {
 	public float karmaToBalanceRatio = 0.0005f;
 
 	private string _gamestate = "ingame";
-	private float _timeToNextEvent = 5.0f;
+	private float _timeToNextEvent = 25.0f;
 	private float _balanceLevel = 0.5f;
 
 	public GameObject _progressBar;
@@ -42,7 +42,7 @@ public class gameManager : MonoBehaviour {
 				_timeToNextEvent = Random.Range (15, 25);
 
 				// loosing some balance here, eh?
-				_balanceLevel -= 0.5f;
+				_balanceLevel -= 0.1f;
 			}
 
 			// update progressbar -- later to replace with inking

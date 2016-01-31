@@ -9,3 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Start/Start.unity
   - enabled: 1
     path: Assets/Scenes/LevelGeneratorTest/LevelGenerator.unity
+  - enabled: 1
+    path: Assets/lost.unity
+  - enabled: 1
+    path: Assets/winscreen.unity
