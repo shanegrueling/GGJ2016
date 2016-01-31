@@ -40,12 +40,12 @@ public class npcBehaviour : MonoBehaviour {
 		}
 
 		// does the player already has an other quest?
-		if(_playerObj.GetComponent<player>().currentNpcClient != gameObject && _playerObj.GetComponent<player>().currentNpcClient != null) {
+/*		if(_playerObj.GetComponent<player>().currentNpcClient != gameObject && _playerObj.GetComponent<player>().currentNpcClient != null) {
 
 			uimanager.GetComponent<uiManager> ().showSpeechBubbleWithText ("Seems like you already got something to do", gameObject);
 			return;
 		}
-
+*/
 		// is the current quest of the player (if given) from the same NPC?
 		if(_playerObj.GetComponent<player>().currentNpcClient == gameObject) {
 
